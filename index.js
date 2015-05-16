@@ -1,5 +1,3 @@
-/**
- * Created by vkumar2 on 15-May-15.
- */
+#!/usr/bin/env node
 
 module.exports = require("./libraries/csv-2-redis");

@@ -27,5 +27,9 @@
     "csv-parse": "~0.1.1",
     "redis": "~0.12.1",
     "rsvp": "~3.0.18"
-  }
+  },
+	"preferGlobal": "true",
+	"bin": {
+		"csv-2-redis" : "index.js"
+	}
 }

@@ -11,10 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7479610c-9573-467e-8a01-3965d6a0f090" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libraries/interfaces/cli/main.js" afterPath="$PROJECT_DIR$/libraries/interfaces/cli/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libraries/csv-2-redis.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libraries/interfaces/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libraries/interfaces/cli/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libraries/interfaces/cli/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
     </list>
     <ignored path="csv-2-redis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +86,13 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-11.9" vertical-offset="0" max-vertical-offset="777">
               <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+=======
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="346" max-vertical-offset="777">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
               <folding />
             </state>
           </provider>
@@ -88,8 +101,13 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libraries/interfaces/cli/main.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.6335878" vertical-offset="1372" max-vertical-offset="2289">
               <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
+=======
+            <state vertical-scroll-proportion="-1.129771" vertical-offset="1372" max-vertical-offset="2289">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
               <folding />
             </state>
           </provider>
@@ -98,8 +116,13 @@
       <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-13.44" vertical-offset="0" max-vertical-offset="609">
               <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+=======
+            <state vertical-scroll-proportion="-17.64" vertical-offset="0" max-vertical-offset="609">
+              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
               <folding />
             </state>
           </provider>
@@ -141,11 +164,18 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/libraries/interfaces/index.js" />
         <option value="$USER_HOME$/Desktop/myCSV.csv" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/package.json" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
         <option value="$PROJECT_DIR$/libraries/interfaces/cli/index.js" />
         <option value="$PROJECT_DIR$/libraries/csv-2-redis.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/libraries/cache-provider.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/package.json" />
+=======
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/libraries/interfaces/cli/main.js" />
       </list>
@@ -365,7 +395,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="67" y="-9" width="1862" height="1098" extended-state="7" />
+=======
+    <frame x="67" y="-9" width="1862" height="1098" extended-state="6" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -481,6 +515,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="346" max-vertical-offset="777">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="168">
@@ -513,6 +558,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.9" vertical-offset="0" max-vertical-offset="777">
@@ -533,14 +579,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="917">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.64" vertical-offset="0" max-vertical-offset="609">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libraries/interfaces/cli/main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.6335878" vertical-offset="1372" max-vertical-offset="2289">
           <caret line="93" column="67" selection-start-line="93" selection-start-column="67" selection-end-line="93" selection-end-column="67" />
+=======
+        <state vertical-scroll-proportion="-1.129771" vertical-offset="1372" max-vertical-offset="2289">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+>>>>>>> 715f02c7c978dd2a1efdc3f8db964211fd6ab0fb
           <folding />
         </state>
       </provider>

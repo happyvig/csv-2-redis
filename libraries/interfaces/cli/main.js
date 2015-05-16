@@ -11,6 +11,7 @@ var fs = require('fs')
 	, RedisAdapter = require('../../../libraries/cache-provider').RedisAdapter;
 
 var _srcFileName,_canGroupByFirstColumn;
+var testData;
 
 var getRedisCache =  function(){
 	var args = process.argv.slice(2);
@@ -58,6 +59,8 @@ var loadDataToRedis = function() {
 						csvRecords.push(record);
 						csvRecordKey = currentRecordKey;
 					}
+
+					testData=currentRecordKey;
 				}
 				CacheProvider.setJson("ActivityInfo", csvRecordKey, csvRecords);
 			}
@@ -72,7 +75,7 @@ var loadDataToRedis = function() {
 
 				/* test data fetch */
 				console.log('Test Fetch - Last Data...');
-				CacheProvider.get("ActivityInfo", "264457").then(function (data) {
+				CacheProvider.get("ActivityInfo", testData).then(function (data) {
 					if (data)
 						console.log("Test Fetch Successful...");
 				});
