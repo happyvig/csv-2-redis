@@ -1,0 +1,31 @@
+{
+  "name": "csv-2-redis",
+  "version": "0.0.0",
+  "description": "A simple module to upload given CSV file into Redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/happyvig/csv-2-redis.git"
+  },
+  "keywords": [
+    "csv-2-redis"
+  ],
+  "author": "Vignesh Kumar",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/happyvig/csv-2-redis/issues"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.5",
+    "chai": "~2.3.0",
+    "jasmine": "~2.3.1"
+  },
+  "dependencies": {
+    "csv-parse": "~0.1.1",
+    "redis": "~0.12.1",
+    "rsvp": "~3.0.18"
+  }
+}
