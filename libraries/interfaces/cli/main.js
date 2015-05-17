@@ -5,6 +5,8 @@
 
 'use strict';
 
+console.log('inside main.js file');
+
 var fs = require('fs')
 	, parse = require('csv-parse')
 	, path = require('path')
@@ -14,6 +16,9 @@ var _srcFileName,_canGroupByFirstColumn;
 var testData;
 
 var getRedisCache =  function(){
+
+	console.log('preapring cache');
+
 	var args = process.argv.slice(2);
 	_srcFileName = args[0];
 	var _redisServer = args[1];
@@ -27,6 +32,8 @@ var getRedisCache =  function(){
 };
 
 var loadDataToRedis = function() {
+
+	console.log('loadDataToRedis method');
 
 	var parser,rs,csvRecordKey,csvRecords = [];
 
@@ -104,4 +111,4 @@ var loadDataToRedis = function() {
 	}
 };
 
-module.exports = loadDataToRedis;
+loadDataToRedis();

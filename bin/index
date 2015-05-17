@@ -1,0 +1,5 @@
+#! node
+
+console.log('inside /bin/index file');
+
+require('./../lib/index.js');
