@@ -1,15 +1,14 @@
 
-// Ex1: csv-2-redis -src "myData.csv" -server "127.0.0.1" -port "6379" -group
-
-// Ex2: csv-2-redis "myData.csv" "some-server-name.com" "some-port-number" "auth-key" -group
+// Ex1: csv-2-redis -src "myData.csv" -server "127.0.0.1" -port "6379"
+// Ex2: csv-2-redis "myData.csv" "some-server-name.com" "some-port-number" "auth-key"
 
 'use strict';
 
 var fs = require('fs')
 	, path = require('path')
-	, parse = require('csv-parse')
-	, userArgs = require('commander')
-	, Provider = require('../../../libraries/cache-provider')
+	, parse = require('csv-parse')                                  // csv parsing helper
+	, userArgs = require('commander')                               // command line helper
+	, Provider = require('../../../libraries/cache-provider')       // custom adapter
 	, RedisAdapter = Provider.RedisAdapter;
 
 var _srcFileName,_canGroupByFirstColumn,testData;

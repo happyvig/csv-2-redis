@@ -1,6 +1,6 @@
 {
   "name": "csv-2-redis",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple module to upload given CSV file into Redis",
   "main": "./lib/index.js",
   "scripts": {
@@ -35,7 +35,6 @@
   "dependencies": {
     "commander": "^2.8.1",
     "csv-parse": "~0.1.1",
-    "progress": "^1.1.8",
     "redis": "~0.12.1",
     "rsvp": "~3.0.18"
   }

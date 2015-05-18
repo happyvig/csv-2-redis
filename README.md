@@ -1,24 +1,39 @@
 # csv-2-redis
 
-CSV-to-RedisServer Uploader Module
-
-CLI :
-----
-
- Ex1: csv-2-redis "myData.csv" "127.0.0.1" "6379"
-
- Ex2: csv-2-redis "myData.csv" localhost default
-
- Ex3: csv-2-redis "myData.csv" local default
-
- Ex4: csv-2-redis "myData.csv" localhost default-port
-
- Ex5: csv-2-redis "myData.csv" local default-port
-
- Ex6: csv-2-redis "myData.csv" "some-server-name.com" "some-port-number" "auth-key"
+A simple module to upload data from CSV files to Redis Server running locally / remotely.
 
 
-OPTIONS:
---------
+##How to install
+----------------
+
+```
+npm install csv-2-redis
+
+```
+
+##CLI :
+------
+
+ ```
+ * csv-2-redis "myData.csv" "127.0.0.1" "6379"
+
+ * csv-2-redis "myData.csv" localhost default
+
+ * csv-2-redis "myData.csv" local default
+
+ * csv-2-redis "myData.csv" localhost default-port
+
+ * csv-2-redis "myData.csv" local default-port
+
+ * csv-2-redis "myData.csv" "some-server-name.com" "some-port-number" "auth-key"
+ ```
+ 
+
+###OPTIONS:
+-----------
 
 -group    : To group values by first column entries
+
+
+
+Free to use and modify. Report any issues you encountered.
