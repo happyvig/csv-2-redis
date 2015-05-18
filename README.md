@@ -2,18 +2,20 @@
 
 A simple module to upload data from CSV files to Redis Server running locally / remotely.
 
+Uses 'csv-parse' module for CSV parsing. 
 
-##How to install
-----------------
 
+##Installation
+---------------
 ```
 npm install csv-2-redis
 
 ```
+Current version is tested with Node v0.10.21 and above.
+
 
 ##CLI :
 ------
-
  ```
  * csv-2-redis "myData.csv" "127.0.0.1" "6379"
 
@@ -29,11 +31,12 @@ npm install csv-2-redis
  ```
  
 
-###OPTIONS:
+###Options:
 -----------
 
--group    : To group values by first column entries
+-g, --group    : To group values by first column entries
 
 
+##LICENCE
 
 Free to use and modify. Report any issues you encountered.
