@@ -1,110 +1,129 @@
 
-// Ex1: csv-2-redis "myData.csv" "127.0.0.1" "6379" -group
+// Ex1: csv-2-redis -src "myData.csv" -server "127.0.0.1" -port "6379" -group
 
 // Ex2: csv-2-redis "myData.csv" "some-server-name.com" "some-port-number" "auth-key" -group
 
 'use strict';
 
-console.log('inside main.js file');
-
 var fs = require('fs')
-	, parse = require('csv-parse')
 	, path = require('path')
-	, RedisAdapter = require('../../../libraries/cache-provider').RedisAdapter;
+	, parse = require('csv-parse')
+	, userArgs = require('commander')
+	, Provider = require('../../../libraries/cache-provider')
+	, RedisAdapter = Provider.RedisAdapter;
 
-var _srcFileName,_canGroupByFirstColumn;
-var testData;
+var _srcFileName,_canGroupByFirstColumn,testData;
 
 var getRedisCache =  function(){
+	var cache = null;
+	userArgs
+		.version('0.0.1')
+		.arguments('<src> <server> <port> [auth]')
+		.action(function(src,server,port,auth){
+			userArgs.source = src;
+			userArgs.server = server;
+			userArgs.port = port;
+			userArgs.authKey = auth;
+		})
+		.option('-g, --group', 'can group by first column?')
+		.parse(process.argv);
 
-	console.log('preapring cache');
+	if(userArgs.source && userArgs.server && userArgs.port) {
+		_srcFileName = userArgs.source;
+		_canGroupByFirstColumn = userArgs.group;
 
-	var args = process.argv.slice(2);
-	_srcFileName = args[0];
-	var _redisServer = args[1];
-	var _redisPort = args[2];
-	var _authKey = args[3] && args[3].indexOf('-group') > -1 ? null : args[3];
-	_canGroupByFirstColumn = (args[3] && args[3].toString().indexOf('-group') > -1)
-									|| (args[4] && args[4].toString().indexOf('-group') > -1);
-	var cache = new RedisAdapter();
-	cache.init({server: _redisServer,port  : _redisPort,auth  : _authKey});
+		cache = new RedisAdapter();
+		cache.init({
+			server: userArgs.server,
+			port: userArgs.port,
+			auth: (userArgs.authKey && JSON.parse(userArgs.authKey)) ? userArgs.authKey : null
+		});
+	}
+	else {
+		if (!userArgs.source) {
+			console.log("\n error: missing required argument 'source file'\n");
+		}
+	}
 	return cache;
 };
 
 var loadDataToRedis = function() {
-
-	console.log('loadDataToRedis method');
-
 	var parser,rs,csvRecordKey,csvRecords = [];
 
 	try {
-
 		var CacheProvider = getRedisCache();
+		if(CacheProvider) {
 
-		/* Using the first line of the CSV data to discover the column names */
-		rs = fs.createReadStream(_srcFileName);
+			/* Using the first line of the CSV data to discover the column names */
+			rs = fs.createReadStream(_srcFileName);
 
-		/* set csv parser */
-		parser = parse({columns: true, trim: true});
+			/* set csv parser */
+			parser = parse({columns: true, trim: true});
 
-		/* Use the writable stream api */
-		var onEachRowRead = function () {
-			var currentRecordKey;
-			var record;
-			if(_canGroupByFirstColumn) {
-				while (record = parser.read()) {
-					currentRecordKey = record['GlobalDeviceId'];
+			/* Use the writable stream api */
+			var onEachRowRead = function () {
+				var currentRecordKey;
+				var record;
+				if (_canGroupByFirstColumn) {
+					while (record = parser.read()) {
 
-					if (!csvRecordKey)
-						csvRecordKey = currentRecordKey;
+						currentRecordKey = record['GlobalDeviceId'];
 
-					if (csvRecordKey == currentRecordKey) {
-						csvRecords.push(record);
-					} else {
-						CacheProvider.setJson("ActivityInfo", csvRecordKey, csvRecords);
-						csvRecords = [];
-						csvRecords.push(record);
-						csvRecordKey = currentRecordKey;
+						if (!csvRecordKey)
+							csvRecordKey = currentRecordKey;
+
+						if (csvRecordKey == currentRecordKey) {
+							csvRecords.push(record);
+						} else {
+							CacheProvider.setJson("ActivityInfo", csvRecordKey, csvRecords);
+							csvRecords = [];
+							csvRecords.push(record);
+							csvRecordKey = currentRecordKey;
+						}
+
+						testData = currentRecordKey;
 					}
-
-					testData=currentRecordKey;
+					CacheProvider.setJson("ActivityInfo", csvRecordKey, csvRecords);
 				}
-				CacheProvider.setJson("ActivityInfo", csvRecordKey, csvRecords);
-			}
-			else{
-				// to be updated
-			}
-		};
+				else {
+					// to be updated
+				}
+			};
 
-		/* When we are done, test that the parsed output matched what expected */
-		var onFinish = function(){
-				console.log("Data Load Successful..");
+			/* When we are done, test that the parsed output matched what expected */
+			var onFinish = function () {
+				console.log("\nData Load Successful..");
 
 				/* test data fetch */
-				console.log('Test Fetch - Last Data...');
 				CacheProvider.get("ActivityInfo", testData).then(function (data) {
 					if (data)
-						console.log("Test Fetch Successful...");
+						console.log("\nTest Fetch Successful...");
+					else
+						console.log("\nTest Fetch Failed...");
+					process.exit(0);
 				});
 
 				/* Close the readable stream */
 				parser.end();
-		};
+			};
 
-		/* Catch any parser error */
-		var onError = function(err){
-			console.log(err.message);
-		};
+			/* Catch any parser error */
+			var onError = function (err) {
+				console.log("\nData Load Failed...");
+				console.log(err.message);
+				process.exit(0);
+			};
 
-		/* hook handlers */
-		parser.on('readable', onEachRowRead);
-		parser.on('finish', onFinish);
-		parser.on('error', onError);
+			/* hook handlers */
+			parser.on('readable', onEachRowRead);
+			parser.on('finish', onFinish);
+			parser.on('error', onError);
 
-		/* pipe the file read stream output to the custom parser */
-		rs.pipe(parser);
+			/* pipe the file read stream output to the custom parser */
+			rs.pipe(parser);
 
-		console.log("Starting Data Load..");
+			console.log("\nStarting Data Load..");
+		}
 	}
 	catch (err) {
 		console.log(err);
