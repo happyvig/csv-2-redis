@@ -1,11 +1,12 @@
 {
   "name": "csv-2-redis",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple module to upload given CSV file into Redis",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./lib/index.js"
+    "start": "node ./lib/index.js",
+    "debugger": "node --debug-brk=5858 --nolazy ./lib/index.js"
   },
   "preferGlobal": "true",
   "bin": {
@@ -33,6 +34,7 @@
     "jasmine": "~2.3.1"
   },
   "dependencies": {
+    "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "csv-parse": "~0.1.1",
     "redis": "~0.12.1",

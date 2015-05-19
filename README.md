@@ -33,7 +33,6 @@ npm install csv-2-redis
 
 ###Options
 -----------
-
 -g, --group    : To group values by first column entries
 
 
