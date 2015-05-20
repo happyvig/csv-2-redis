@@ -33,8 +33,8 @@ npm install csv-2-redis
 
 ###Options
 -----------
--g, --group    : Specify this option to group values by first column entries
--t, --test     : Specify this option to test a random data, after successful data upload to Redis
+* -g, --group    : Specify this option to group values by first column entries
+* -t, --test     : Specify this option to test a random data, after successful data upload to Redis
 
 ###Example
 ---------
