@@ -37,7 +37,7 @@
     "commander": "^2.8.1",
     "csv-parse": "~0.1.1",
     "redis": "~0.12.1",
-    "rsvp": "~3.0.18",
+    "rsvp": "~3.6.2",
     "underscore": "^1.8.3"
   }
 }
